@@ -1,0 +1,32 @@
+<?php
+// Get single post.
+$blogpost = $block->getPost();
+?>
+<a class="return-button" href="<?= $block->getUrl('dev98blogposts'); ?>">&lt;- back to post list</a>
+<div class="post-full">
+    <div class="header">
+        <h2 class="title"><?= $blogpost['title']; ?></h2>
+        <span class="date"><?= $blogpost['created_at'] ?></span> - <span class="author"><?= $blogpost['author']; ?></span>
+    </div>
+    <div class="post-content">
+        <?= $blogpost['post_content']; ?>
+    </div>
+</div>
+<style>
+.header {
+    text-align: center;
+}
+.header .title {
+    margin-bottom: 1rem;
+}
+.post-content {
+    margin-top: 2rem;
+    text-align: justify;
+}
+.return-button {
+    display: inline-block;
+    border: 1px solid black;
+    background: #ddd;
+    padding: 5px 10px;
+}
+</style>

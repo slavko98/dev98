@@ -1,0 +1,53 @@
+<?php
+// Get all posts as an array.
+$blogposts = $block->getPosts();
+?>
+<div class="container">
+    <a class="pull-posts-button button" href="<?= $block->getUrl('dev98blogposts/pull'); ?>">Pull posts from the Dev98 blog</a>
+<?php foreach ($blogposts['items'] as $post) : ?>
+    <div class="post-summary">
+        <hr>
+        <div class="header">
+            <h2 class="title"><?= $post['title']; ?></h2>
+            <span class="date"><?= $post['created_at'] ?></span> - <span class="author"><?= $post['author']; ?></span>
+        </div>
+        <div class="post-description">
+            <?= $post['post_description']; ?>
+        </div>
+        <div class="align-center">
+            <a class="show-more-button button" href="<?= $block->getUrl('dev98blogposts/post', ['id' => $post['uid']]); ?>">show more</a>
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>
+<style>
+.container {
+    margin: auto;
+    width: 75%;
+}
+p.read-more {
+    display: none;
+}
+.header {
+    text-align: center;
+}
+.header .title {
+    margin-bottom: 1rem;
+}
+.post-description {
+    margin-top: 2rem;
+    text-align: justify;
+}
+.align-center {
+    text-align: center;
+}
+.show-more-button {
+    margin-top: 20px;
+}
+.button {
+    display: inline-block;
+    border: 1px solid black;
+    background: #ddd;
+    padding: 5px 10px;
+}
+</style>
