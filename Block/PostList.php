@@ -20,7 +20,9 @@ class PostList extends \Magento\Framework\View\Element\Template
     public function getPosts()
     {
         $post = $this->postFactory->create();
-        $posts = $post->getCollection()->toArray();
+        $posts = $post->getCollection()
+            ->addFieldToFilter('status', 1)
+            ->toArray();
         return $posts;
     }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Slavko98_Dev98::blogposts" title="Dev98 Blogposts" module="Slavko98_Dev98" sortOrder="51" resource="Slavko98_Dev98::blogposts"/>
+        <add id="Slavko98_Dev98::grid" title="Manage Posts" module="Slavko98_Dev98" sortOrder="10" action="slavko98_dev98/grid" resource="Slavko98_Dev98::grid" parent="Slavko98_Dev98::blogposts"/>
+        <add id="Slavko98_Dev98::dev98_config" title="Configuration" module="Slavko98_Dev98" sortOrder="99" parent="Slavko98_Dev98::blogposts" action="adminhtml/system_config/edit/section/dev98" resource="Slavko98_Dev98::dev98_config"/>
+    </menu>
+</config>
